@@ -15,10 +15,10 @@ New level
 - Put BP_Global in the scene regardless for now. This is essential to store all the fish swallowed by player. Tea will try to eliminate this step by looking into static variables within blueprint (currently have not found yet.)
 - For any new puzzle level, open the level blueprint. For level preconstruct, have node Event Preconstruct -> Create Widget (UI_GamePlay) -> Add to Viewport. You can open level TestingGround blueprint to see the setup.
 
-Fish size/scale
-- Default/InitialDefault
-- Glow
-- Acid
-- Starfish
-- Tiny
-- Bubble
+Fish speed and size:
+- Default/InitialDefault : 1.0, 1.0
+- Glow: 0.8, 0.8
+- Acid: 0.7, 0.7
+- Starfish: 0.5, 0.5
+- Bubble: 0.5, 0.5
+- Tiny: 0.4, 0.4
