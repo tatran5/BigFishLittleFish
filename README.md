@@ -32,5 +32,5 @@ Made with in Unreal Engine 4.24 using Blueprints.
 - Glowfish: 1.2
 - Acid: 0.9
 - Starfish: 0.8
-- Bubble: 0.5
-- Tiny: 0.4
+- Bubble: 0.65
+- Tiny: 0.6
