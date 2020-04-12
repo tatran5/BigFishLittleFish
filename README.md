@@ -1,6 +1,8 @@
 # BigFishLittleFish
 Made with in Unreal Engine 4.24 using Blueprints.
 
+Videos: https://drive.google.com/drive/u/1/folders/1s2rCNuRxHhnlWahYP_aduz_cMJOrT9Iu
+
 ## Adding New Types of Fish 
 - Make the new fish inherit from BP_Fish. BP_Fish includes all moveand collision handling implementation.
 - DO NOT scale fish manually in the viewport. Set the capsule component to 1.0, 1.0, 1.0. Otherwise, this will affect fish spawned later in the game (they will exponentially be scaled up or down).
