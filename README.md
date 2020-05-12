@@ -1,38 +1,54 @@
-# BigFishLittleFish
-Made with in Unreal Engine 4.24 using Blueprints.
+# Big Fish, Little Fish
+Made with Unreal Engine 4.24 using Blueprints.
 
-Videos: https://drive.google.com/drive/u/1/folders/1s2rCNuRxHhnlWahYP_aduz_cMJOrT9Iu
+\includegraphics[]{Images/Acidfish.png}
 
-## Adding New Types of Fish 
-- Make the new fish inherit from BP_Fish. BP_Fish includes all moveand collision handling implementation.
-- DO NOT scale fish manually in the viewport. Set the capsule component to 1.0, 1.0, 1.0. Otherwise, this will affect fish spawned later in the game (they will exponentially be scaled up or down).
-- From the BeginPlay node, setup FishType, Size, Speed simimlarly to BP_FishTiny.
-- Update SpawnFish and TransformFish functions within BP_Fish by adding an additional switch case for FishType. These two functions are necessary for Spit and Swallow to work correctly.
-- Put the new blueprint inside BluePrints/Fish folder
-- May be a good idea to document size and resize in BeginPlay. Different types of fish should have different sizes because this affects prey/predator behavior. Document all fish size/scale within this README.
-- Add an image of the fish into Textures so that if this fish is eaten by the main player, the storage is updated with an image of this fish. Then, go to UI_GamePlay blueprint. Within function CreateFishImage, add the appropriate switch case. 
+Big Fish, Little Fish pits the player against the mysterious depths of the sea and its dangerous terrain. As a peaceful big fish, you must swim across the ocean to reunite with the rest of your species, navigate coral mazes and ship doors, all while avoiding certain doom from hungry predators, apathetic sea urchins, and collapsing ship wreckage. To do so, you're going to need help getting around from your smaller fish friends by eating them to borrow their shape and size for a while. Swallow and spit nearby fish as necessary to adopt their abilities, get through perilous puzzles, and find your family!
 
-##New level 
-- Put BP_Global in the scene regardless for now. This is essential to store all the fish swallowed by player.
-- For any new puzzle level, open the level blueprint. For level preconstruct, have node Event Preconstruct -> Create Widget (UI_GamePlay) -> Add to Viewport. You can open level TestingGround blueprint to see the setup.
+# Features
 
-##BP_Fish class documentation:
-- FishType: stores the type of current fish to avoid lots of casting
-- IsAI: only false for player so that other fish responds correctly every tick as an AI
-- DistanceOfDetection: player fish has to be within this distance to an AI fish for that fish to detect and hence run to/from the player
-- FacingRight: whether fish is facing in the positive Y or negative Y direction
-- RunInterval: fish only run away from player for <RunInterval> seconds. It will start to wander again if it does not face towards the player.
-- RunTime: once fish is triggered to run from player, this tracks how long the fish has been running away from player (will reset back to 0 once it reaches RunInterval)
-- WanderDirection: if the fish is wandering, this tracks the direction that the fish is wandering towards
-- WanderInterval:
-- WanderTime:
+-Recursive swallow and spit mechanic. Swallow stores eaten fish recursively, and spit spawns eaten fish into the level and transforms the player into the current fish on the top of the eaten stack. The direction fish are spawned is based on the player's look direction, and it checks using raycasting to determine if there is an obstacle that prevents them from spawning, in which case they are spawned in the nearest available area. Fish that have been spit out run from the player.
 
-##Fish Size Order
-- Default/InitialDefault: 1
-- Swordfish: 1.7
-- Manta Ray: 1.5
-- Glowfish: 1.2
-- Acid: 0.9
-- Starfish: 0.8
-- Bubble: 0.65
-- Tiny: 0.6
+-Fish transformation. When the player swallows a fish, the player possesses the swallowed fish and gains its abilities, speed, look and size. When the player spits out a fish, they gain the abilities, size, and speed of the current fish on top of the eaten stack.
+
+-Fish Abilities. There are 6 different fish the player can swallow and transform into, each with their own ability that allows the player to solve puzzles and navigate the levels. See list below for more details.
+
+-Predator and Prey AI. When the player is not detected by a fish, fish wander by either picking a direction to swim in or following a set path (based on input from the level designer). If smaller than the player, fish flee in the opposite direction from the player. They also will swim into a hiding spot when threatened if a hiding position is defined by the level designer. If larger than the player, the fish will swim towards the player and attempt to eat them. If an obstacle blocks the fish's path, it will stop chasing the player. Fish detect the player when they are close enough to the player and are looking in the player's direction.
+
+-Hazardous obstacles. Seaweed reduces the player's speed when the player runs into it; spikes and poison decrease the player's health when the player runs into it. The player has a short period of invulnerability when they take damage.
+
+-Physics-based movement using velocities and drag.
+
+-UI and Events System. Includes a start screen, level selection that updates when players collect stars, a how to play guide, and tutorial levels.
+
+# Fish
+
+-Acid Fish : Shoots out acid that can corrode metallic and wooden objects in the level.
+
+\includegraphics[]{Images/Acidfish.png}
+
+-Bubble Fish : Shoots out bubbles that can engulf and lift wooden boxes in the level. These bubbles pop when they hit spikes or when the player collides with it.
+
+\includegraphics[]{Images/Bubblefish.png}
+
+-Manta Ray : Can swim through sand in the level while other types of fish can't.
+
+\includegraphics[]{Images/Mantaray.png}
+
+-Starfish : Can break off up to 3 legs, each that move along with the player. When the main body collides with a leg, it reabsorbs the leg, allowing the player to break it off again.
+
+
+-Swordfish : Can cut through seaweed in the level.
+
+
+-Tiny Fish : Its small size allows it to swim through small passages.
+
+\includegraphics[]{Images/Tinyfish.png}
+
+# How To Play
+
+-Use the arrow keys to swim around. 
+-Swim into fish to automatically swallow them if they are smaller than you. You will lose a life/respawn if you collide with a larger fish. Watch the fish's behavior (they swim towards you if you are bigger than them and swim away if they are smaller) to determine whether you can swallow the fish. 
+-Press S to spit out fish that you have already swallowed and transform into the previous fish. You cannot spit out a fish if your difference in size would cause you to get stuck in an area. 
+-Press space to use the ability of the current fish you are possessing. For more info on fish abilities, read the How To Play Guide or play the tutorial levels.
+
