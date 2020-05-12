@@ -19,7 +19,7 @@ Big Fish, Little Fish pits the player against the mysterious depths of the sea a
 
 -Physics-based movement using velocities and drag.
 
--UI and Events System. Includes a start screen, level selection that updates when players collect stars, a how to play guide, and tutorial levels.
+-UI and Events System. Includes a start screen, level selection that updates when players collect stars, a how to play guide, and tutorial levels. The system also allows user to save their progress as they pass certain levels as well. 
 
 # Fish
 
