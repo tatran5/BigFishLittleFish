@@ -1,7 +1,7 @@
 # Big Fish, Little Fish
 Made with Unreal Engine 4.24 using Blueprints.
 
-\includegraphics[]{Images/Acidfish.png}
+![](Images/Title.png)
 
 Big Fish, Little Fish pits the player against the mysterious depths of the sea and its dangerous terrain. As a peaceful big fish, you must swim across the ocean to reunite with the rest of your species, navigate coral mazes and ship doors, all while avoiding certain doom from hungry predators, apathetic sea urchins, and collapsing ship wreckage. To do so, you're going to need help getting around from your smaller fish friends by eating them to borrow their shape and size for a while. Swallow and spit nearby fish as necessary to adopt their abilities, get through perilous puzzles, and find your family!
 
@@ -25,15 +25,15 @@ Big Fish, Little Fish pits the player against the mysterious depths of the sea a
 
 -Acid Fish : Shoots out acid that can corrode metallic and wooden objects in the level.
 
-\includegraphics[]{Images/Acidfish.png}
+![](Images/Acidfish.png)
 
 -Bubble Fish : Shoots out bubbles that can engulf and lift wooden boxes in the level. These bubbles pop when they hit spikes or when the player collides with it.
 
-\includegraphics[]{Images/Bubblefish.png}
+![](Images/Bubblefish.png)
 
 -Manta Ray : Can swim through sand in the level while other types of fish can't.
 
-\includegraphics[]{Images/Mantaray.png}
+![](Images/Mantaray.png)
 
 -Starfish : Can break off up to 3 legs, each that move along with the player. When the main body collides with a leg, it reabsorbs the leg, allowing the player to break it off again.
 
@@ -43,12 +43,15 @@ Big Fish, Little Fish pits the player against the mysterious depths of the sea a
 
 -Tiny Fish : Its small size allows it to swim through small passages.
 
-\includegraphics[]{Images/Tinyfish.png}
+![](Images/Tinyfish.png)
 
 # How To Play
 
--Use the arrow keys to swim around. 
+-Use the arrow keys to swim around.
+
 -Swim into fish to automatically swallow them if they are smaller than you. You will lose a life/respawn if you collide with a larger fish. Watch the fish's behavior (they swim towards you if you are bigger than them and swim away if they are smaller) to determine whether you can swallow the fish. 
+
 -Press S to spit out fish that you have already swallowed and transform into the previous fish. You cannot spit out a fish if your difference in size would cause you to get stuck in an area. 
+
 -Press space to use the ability of the current fish you are possessing. For more info on fish abilities, read the How To Play Guide or play the tutorial levels.
 
