@@ -21,6 +21,8 @@ Big Fish, Little Fish pits the player against the mysterious depths of the sea a
 
 -UI and Events System. Includes a start screen, level selection that updates when players collect stars, a how to play guide, and tutorial levels. The system also allows user to save their progress as they pass certain levels as well. 
 
+-These features can be observed in the gameplay videos [here](https://drive.google.com/drive/u/1/folders/1fOpkDIK8jGH0oGgmlOIvrrXPnSU29QPQ)
+
 # Fish
 
 -Acid Fish : Shoots out acid that can corrode metallic and wooden objects in the level.
